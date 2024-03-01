@@ -54,7 +54,7 @@
 $sql = "SHOW TABLES";
 $result = query($sql);
 while ($row = mysqli_fetch_row($result)) {
-  if($row[0] == "login" || $row[0] == "timer" || $row[0] == "result") {
+  if($row[0] == "login" || $row[0] == "timer" || $row[0] == "result" || $row[0] == "student") {
     echo '<ul class="nav nav-treeview" hidden>
               <li class="nav-item">
                 <a href="./questions?id='.$row[0].'" class="nav-link">

@@ -71,7 +71,7 @@ while ($row = mysqli_fetch_row($result)) {
 $sql = "SHOW TABLES";
 $result = query($sql);
 while ($row = mysqli_fetch_row($result)) {
-  if($row[0] == "login" || $row[0] == "timer" || $row[0] == "result") {
+  if($row[0] == "login" || $row[0] == "timer" || $row[0] == "result" || $row[0] == "student") {
     echo '
             ';
   } else {
