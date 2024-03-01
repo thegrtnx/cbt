@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 01, 2024 at 06:44 AM
+-- Generation Time: Mar 01, 2024 at 01:38 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -20,6 +20,23 @@ SET time_zone = "+00:00";
 --
 -- Database: `cbt`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `bovas recruitment exercise`
+--
+
+CREATE TABLE `bovas recruitment exercise` (
+  `id` int(255) NOT NULL,
+  `sn` text DEFAULT NULL,
+  `question` text DEFAULT NULL,
+  `oa` text DEFAULT NULL,
+  `ob` text DEFAULT NULL,
+  `oc` text DEFAULT NULL,
+  `od` text DEFAULT NULL,
+  `correct` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -88,33 +105,6 @@ INSERT INTO `login` (`id`, `school`, `username`, `password`, `admpword`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `online exam`
---
-
-CREATE TABLE `online exam` (
-  `id` int(255) NOT NULL,
-  `sn` text DEFAULT NULL,
-  `question` text DEFAULT NULL,
-  `oa` text DEFAULT NULL,
-  `ob` text DEFAULT NULL,
-  `oc` text DEFAULT NULL,
-  `od` text DEFAULT NULL,
-  `correct` text DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `online exam`
---
-
-INSERT INTO `online exam` (`id`, `sn`, `question`, `oa`, `ob`, `oc`, `od`, `correct`) VALUES
-(1, '1', 'Hello', 'lol', 'mol', 'was', 'lop', 'lol'),
-(2, '2', 'plol', 'lsm', 'sjm', 'sm', 'ksw', 'sm'),
-(3, '3', 'sndl', 'sdnl', 'nlsd', 'nl', 'wipe', 'sdnl'),
-(4, '4', 'knd', 'nsd', 'nsd', 'al', 'smeke', 'al');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `result`
 --
 
@@ -177,11 +167,17 @@ CREATE TABLE `timer` (
 
 INSERT INTO `timer` (`id`, `subject`, `hour`, `min`, `attempt`, `instruct`, `acesscode`) VALUES
 (81, 'jss 1_history', '0', '15', 20, '<p>Attempt all questions</p>', 'accesscode'),
-(87, 'Online Exam', '0', '1', 2, '<p>Check all questions before attempting.</p>', 'cbtexam');
+(89, 'Bovas Recruitment Exercise', '1', '0', 100, '<p>Attempt all questions</p>', 'cbtexam');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `bovas recruitment exercise`
+--
+ALTER TABLE `bovas recruitment exercise`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `jss 1_history`
@@ -193,12 +189,6 @@ ALTER TABLE `jss 1_history`
 -- Indexes for table `login`
 --
 ALTER TABLE `login`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `online exam`
---
-ALTER TABLE `online exam`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -224,6 +214,12 @@ ALTER TABLE `timer`
 --
 
 --
+-- AUTO_INCREMENT for table `bovas recruitment exercise`
+--
+ALTER TABLE `bovas recruitment exercise`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `jss 1_history`
 --
 ALTER TABLE `jss 1_history`
@@ -234,12 +230,6 @@ ALTER TABLE `jss 1_history`
 --
 ALTER TABLE `login`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `online exam`
---
-ALTER TABLE `online exam`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `result`
@@ -257,7 +247,7 @@ ALTER TABLE `student`
 -- AUTO_INCREMENT for table `timer`
 --
 ALTER TABLE `timer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
